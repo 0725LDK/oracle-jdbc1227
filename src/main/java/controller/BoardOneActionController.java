@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import service.BoardService;
 import vo.Board;
 
-/**
- * Servlet implementation class BoardOneActionController
- */
+
 @WebServlet("/BoardOneActionController")
 public class BoardOneActionController extends HttpServlet {
 	

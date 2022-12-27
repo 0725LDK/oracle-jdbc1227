@@ -132,4 +132,52 @@ public class BoardService {
 		}
 		return row;
 	}
+	
+	//board 수정
+	public int getUpdateBoard(Board board)
+	{
+		BoardDao boardDao = new BoardDao();
+		int row = 0;
+		Connection conn = null;
+				
+		try {
+			conn = DBUtil.getConnection();
+			row = boardDao.updateBoard(conn, board);
+			conn.commit();
+		} catch (Exception e) {
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return row;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

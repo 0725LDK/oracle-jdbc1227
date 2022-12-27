@@ -15,11 +15,21 @@ import vo.Board;
 public class BoardUpdateActionController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));
+		String boardTitle = request.getParameter("boardTitle");
+		String boardContent = request.getParameter("boardContent");
+		
 		
 		Board board = new Board();
-		BoardService boardService = new BoardService();
+		board.setBoardNo(boardNo);
+		board.setBoardTitle(boardTitle);
+		board.setBoardContent(boardContent);
 		
+		BoardService boardService = new BoardService();
+		boardService.getUpdateBoard(board);
+		
+		response.sendRedirect(request.getContextPath()+"/BoardListController");
 		
 	}
 

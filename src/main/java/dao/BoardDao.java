@@ -85,10 +85,18 @@ public class BoardDao {
 		return row;
 	}
 	
-	public Board updateBoard(Connection conn, int boardNo) throws Exception
+	public int updateBoard(Connection conn, Board board) throws Exception
 	{
-		Board board = null;
-				
-		return board;
+		int row = 0;
+		
+		String sql = "update board set board_title = ?, board_content = ?, updatedate=sysdate where board_no = ?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, board.getBoardTitle());
+		stmt.setString(2, board.getBoardContent());
+		stmt.setInt(3, board.getBoardNo());
+
+		row = stmt.executeUpdate();
+		
+		return row;
 	}
 }

@@ -13,23 +13,25 @@
 		$('#rowPerPage').change(function() {
 			$('#pageForm').submit();
 			alert('change');
-		})
+		});
 		//게시글 추가시 유효성 검사
+		
+		
 		$('#BoardAddBtn').click(function()
 				{
 					if($('#boardTitle').val() == '')
-						{
-							alert('글 제목을 입력하세요');
-							$('#boardTitle').focus();
-							return;
-						}
+					{
+						alert('글 제목을 입력하세요');
+						$('#boardTitle').focus();
+						return;
+					}
 					if($('#boardContent').val() == '')
 					{
 						alert('글 내용을 입력하세요');
 						$('#boardContent').focus();
 						return;
 					}
-					$(location).attr('href', '${pageContext.request.contextPath}/BoardAddActionController');
+					$('#addForm').submit();
 				});
 	});
 </script>
@@ -81,7 +83,7 @@
 	</div>
 	
 	<h1>BOARD ADD</h1>
-	<form action="${pageContext.request.contextPath}/BoardAddActionController" method="post">
+	<form id="addForm" action="${pageContext.request.contextPath}/BoardAddActionController" method="post">
 		<table>
 			<tr>
 				<td>글 제목</td>
@@ -92,7 +94,7 @@
 				<td><input type="text" name="boardContent" id="boardContent"></td>
 			</tr>
 		</table>
-		<button id="BoardAddBtn" type="submit">작성하기</button>
+		<button id="BoardAddBtn" type="button">작성하기</button>
 	</form>
 	
 </body>
