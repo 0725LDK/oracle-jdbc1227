@@ -38,7 +38,12 @@
 </head>
 <body>
 	<h1>BOARD LIST</h1>
-	<form id="pageForm" action="${pageContext.request.contextPath}/BoardListController" method="get">
+	<div>
+		<a href="${pageContext.request.contextPath}/board/addBoard">추가하기</a>
+		<a href="${pageContext.request.contextPath}/home">홈으로</a>
+		<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+	</div>
+	<form id="pageForm" action="${pageContext.request.contextPath}/board/boardList" method="get">
 		<select name="rowPerPage" id="rowPerPage">
 			<c:if test="${rowPerPage == 10}">
 				<option value="10" selected="selected">10</option>
@@ -62,40 +67,24 @@
 			<th>번호</th>
 			<th>제목</th>
 			<th>생성일자</th>
-			<th>수정</th>
-			<th>삭제</th>
 		</tr>
 		<c:forEach var="b" items="${boardList}">
 			<tr>
 				<td>${b.boardNo}</td>
-				<td><a href="${pageContext.request.contextPath}/BoardOneActionController?boardNo=${b.boardNo}">${b.boardTitle}</a></td>
+				<td><a href="${pageContext.request.contextPath}/board/boardOne?boardNo=${b.boardNo}">${b.boardTitle}</a></td>
 				<td>${b.createdate}</td>
-				<td><a href="${pageContext.request.contextPath}/BoardUpdateFormController?boardNo=${b.boardNo}">수정</a></td>
-				<td><a href="${pageContext.request.contextPath}/BoardDeleteActionController?boardNo=${b.boardNo}">삭제</a></td>
 			</tr>
-		
 		</c:forEach>
 	</table>
 	
+	
+	
 	<div>
-		<a href="${pageContext.request.contextPath}/BoardListController?rowPerPage=${rowPerPage}&currentPage=${currentPage-1}">이전</a>
-		<a href="${pageContext.request.contextPath}/BoardListController?rowPerPage=${rowPerPage}&currentPage=${currentPage+1}">다음</a>
+		<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage-1}">이전</a>
+		<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage+1}">다음</a>
 	</div>
 	
-	<h1>BOARD ADD</h1>
-	<form id="addForm" action="${pageContext.request.contextPath}/BoardAddActionController" method="post">
-		<table>
-			<tr>
-				<td>글 제목</td>
-				<td><input type="text" name="boardTitle" id="boardTitle"></td>
-			</tr>
-			<tr>
-				<td>글 내용</td>
-				<td><input type="text" name="boardContent" id="boardContent"></td>
-			</tr>
-		</table>
-		<button id="BoardAddBtn" type="button">작성하기</button>
-	</form>
+	
 	
 </body>
 </html>

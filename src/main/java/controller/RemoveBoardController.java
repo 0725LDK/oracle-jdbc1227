@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 import service.BoardService;
 
 
-@WebServlet("/BoardDeleteActionController")
-public class BoardDeleteActionController extends HttpServlet {
+@WebServlet("/board/removeBoard")
+public class RemoveBoardController extends HttpServlet {
 	
+	//바로 삭제 -> boardList
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int boardNo = Integer.parseInt(request.getParameter("boardNo"));
 		
@@ -23,7 +24,7 @@ public class BoardDeleteActionController extends HttpServlet {
 			System.out.println("삭제실패");
 		}
 		
-		response.sendRedirect(request.getContextPath()+"/BoardListController");
+		response.sendRedirect(request.getContextPath()+"/board/boardList");
 	}
 
 	

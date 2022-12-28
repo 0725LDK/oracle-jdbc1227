@@ -32,7 +32,7 @@
 </head>
 <body>
 	<h1>BOARD UPDATE</h1>
-	<form id="updateForm" action="${pageContext.request.contextPath}/BoardUpdateActionController" method="post">
+	<form id="updateForm" action="${pageContext.request.contextPath}/board/modifyBoard" method="post">
 		<table>
 			<tr>
 				<td>번호</td>
