@@ -21,17 +21,20 @@
 </head>
 <body>
 	<c:if test="${loginMember == null}">
-		<h1>로그인 전 페이지</h1>
+		<h1>Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h1>
+		<h3>로그인 전 페이지</h3>
 		
 		<div>
 			<a href="${pageContext.request.contextPath}/member/login">로그인</a>
 			<a href="${pageContext.request.contextPath}/member/addMember">회원가입</a>
 		</div>
 		
+		
 	</c:if>
 	
 	<c:if test="${loginMember != null}">
-		<h1>로그인 후 페이지</h1>
+		<h1>Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h1>
+		<h3>로그인 후 페이지</h3>
 		<div>
 			<span>${loginMember.memberId }님 반갑습니다.</span>
 		</div>
