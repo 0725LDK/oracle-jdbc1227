@@ -6,9 +6,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import service.BoardService;
 import vo.Board;
+import vo.Member;
 
 
 @WebServlet("/board/boardOne")
@@ -30,7 +32,10 @@ public class BoardOneController extends HttpServlet {
 		board.setCreatedate(board.getCreatedate());
 		
 		request.setAttribute("board", board);
-		
+		HttpSession session = request.getSession();
+		//로그인 전 : logineMember -> null
+		//로그인 후 : logineMember -> not null
+		Member loginMember = (Member)session.getAttribute("loginMember");
 		request.getRequestDispatcher("/WEB-INF/view/board/boardOne.jsp").forward(request, response);
 	}
 

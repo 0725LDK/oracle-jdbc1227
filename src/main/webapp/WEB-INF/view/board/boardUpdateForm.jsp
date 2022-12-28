@@ -25,6 +25,7 @@
 						return;
 					}
 					$('#updateForm').submit();
+					alert('게시글 수정 성공!');
 				});
 	});
 </script>

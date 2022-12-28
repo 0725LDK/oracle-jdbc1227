@@ -5,21 +5,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		//로그인시 유효성 검사
+		$('#loginFormBtn').click(function()
+				{
+					if($('#memberId').val() == '')
+					{
+						alert('아이디를 입력하세요');
+						$('#memberId').focus();
+						return;
+					}
+					if($('#memberPw').val() == '')
+					{
+						alert('비밀번호를 입력하세요');
+						$('#memberPw').focus();
+						return;
+					}
+					$('#loginForm').submit();
+				});
+	});
+</script>
+
 </head>
 <body>
 	<h1>로그인</h1>
-	<form action="${pageContext.request.contextPath}/member/login" method="post">
+	<form id="loginForm" action="${pageContext.request.contextPath}/member/login" method="post">
 		<table>
 			<tr>
 				<td>ID : </td>
-				<td><input type="text" name="memberId"></td>
+				<td><input id="memberId" type="text" name="memberId"></td>
 			</tr>
 			<tr>
 				<td>PW : </td>
-				<td><input type="password" name="memberPw"></td>
+				<td><input id="memberPw" type="password" name="memberPw"></td>
 			</tr>
 		</table>
-		<button type="submit">로그인</button>
+		<button id="loginFormBtn" type="button">로그인</button>
 	</form>
 	
 </body>

@@ -6,6 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		//회원탈퇴시 유효성 검사
+		$('#logout').click(function()
+				{
+						alert('로그아웃 되었습니다.');
+						return;
+				});
+	});
+</script>
 </head>
 <body>
 	<c:if test="${loginMember == null}">
@@ -24,9 +36,9 @@
 			<span>${loginMember.memberId }님 반갑습니다.</span>
 		</div>
 		<div>
-			<a href="${pageContext.request.contextPath}/board/boardList">게시판 리스트</a>
+			<a href="${pageContext.request.contextPath}/board/boardList?memberId=${loginMember.memberId}">게시판 리스트</a>
 			<a href="${pageContext.request.contextPath}/member/memberOne?memberId=${loginMember.memberId}">회원정보 보기</a>
-			<a href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+			<a id="logout" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
 		</div>
 	</c:if>
 </body>
