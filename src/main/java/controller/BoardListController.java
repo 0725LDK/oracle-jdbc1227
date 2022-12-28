@@ -11,7 +11,7 @@ import vo.*;
 import java.util.*;
 
 
-@WebServlet("/BoardListController")
+@WebServlet("/board/boardList")
 public class BoardListController extends HttpServlet {
 	
 	private BoardService boardService;
@@ -35,6 +35,6 @@ public class BoardListController extends HttpServlet {
 		request.setAttribute("currentPage", currentPage); //view에서 필요
 		request.setAttribute("rowPerPage", rowPerPage);  //view에서 필요
   
-		request.getRequestDispatcher("/WEB-INF/view/boardList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/board/boardList.jsp").forward(request, response);
    }
 }

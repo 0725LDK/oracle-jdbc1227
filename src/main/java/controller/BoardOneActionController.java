@@ -31,7 +31,7 @@ public class BoardOneActionController extends HttpServlet {
 		
 		request.setAttribute("board", board);
 		
-		request.getRequestDispatcher("/WEB-INF/view/boardOne.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/view/board/boardOne.jsp").forward(request, response);
 	}
 
 	
