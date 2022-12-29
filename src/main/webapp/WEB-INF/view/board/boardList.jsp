@@ -100,7 +100,6 @@
 						
 								<span >
 									<form id="pageForm" action="${pageContext.request.contextPath}/board/boardList" method="get">
-										<span>페이지 수 : </span>
 										<select name="rowPerPage" id="rowPerPage">
 											<c:if test="${rowPerPage == 10}">
 												<option value="10" selected="selected">10</option>
@@ -118,6 +117,7 @@
 												<option value="30" selected="selected">30</option>
 											</c:if>
 										</select>
+										<span>개씩 보기</span>
 									</form>
 								</span>
 							</td>
