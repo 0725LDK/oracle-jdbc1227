@@ -41,6 +41,7 @@ public class ModifyBoardController extends HttpServlet {
 		BoardService boardService = new BoardService();
 		boardService.getUpdateBoard(board);
 		
+		request.setAttribute("boardNo", boardNo);
 		response.sendRedirect(request.getContextPath()+"/board/boardList");
 		
 	}

@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +20,12 @@ public class LoginController extends HttpServlet {
 	//로그인 폼
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// VIEW -> /WEB-INF/view/member/login.jsp
+		
+		
+		String msg = request.getParameter("msg");
+		
+		request.setAttribute("msg", msg);
+		
 		request.getRequestDispatcher("/WEB-INF/view/member/login.jsp").forward(request, response);
 	
 	}
@@ -55,7 +63,7 @@ public class LoginController extends HttpServlet {
 		
 		if(resultMember == null)//로그인 실패
 		{
-			response.sendRedirect(request.getContextPath()+"/member/login");
+			response.sendRedirect(request.getContextPath()+"/member/login?msg="+0);
 			return;
 		}
 		

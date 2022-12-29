@@ -16,8 +16,15 @@ public class LogoutController extends HttpServlet {
 	// view 없음 성공시 -> redirect(get 방식)-> /home (다른 컨트롤러)
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String msg = "1";
+		if(request.getParameter("msg") != null)
+		{
+			msg = request.getParameter("msg");
+		}
+		request.setAttribute("msg", msg);
 		request.getSession().invalidate();
-		response.sendRedirect(request.getContextPath()+"/home");
+		response.sendRedirect(request.getContextPath()+"/home?msg="+msg);
 	}
 
 	

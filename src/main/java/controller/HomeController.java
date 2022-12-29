@@ -30,7 +30,8 @@ public class HomeController extends HttpServlet {
 		//1) 로그아웃
 		//2) 회원정보
 		//3) 게시판 리스트
-		
+		String msg = request.getParameter("msg");
+		request.setAttribute("msg", msg);
 		HttpSession session = request.getSession();
 		//로그인 전 : logineMember -> null
 		//로그인 후 : logineMember -> not null

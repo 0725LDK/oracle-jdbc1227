@@ -60,7 +60,8 @@
 								/>
 							</div>
 							<div class="mb-3">
-								<button class="btn btn-primary d-grid w-100" id="modifyMemberFormBtn" type="button">Edit My Information!</button>
+								<button class="btn btn-primary d-grid w-100" id="modifyMemberFormBtn" type="button">Edit My Information!</button><br>
+								<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/home">Go Home</a>
 							</div>
 						</form>
 					</div>

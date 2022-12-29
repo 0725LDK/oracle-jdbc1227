@@ -84,7 +84,8 @@
 								/>
 							</div>
 							<div class="mb-3">
-								<button class="btn btn-primary d-grid w-100" id="addMemberFormBtn" type="button">Create Account!</button>
+								<button class="btn btn-primary d-grid w-100" id="addMemberFormBtn" type="button">Create Account!</button><br>
+								<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/home">Go Home</a>
 							</div>
 						</form>
 					</div>

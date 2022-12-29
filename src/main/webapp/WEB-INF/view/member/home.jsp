@@ -25,7 +25,11 @@
 					});
 		});
 	</script>
-	
+	<c:if test="${msg == 0}">
+		<script>
+			alert('회원탈퇴 성공!');
+		</script>
+	</c:if>
 	<title>HOME</title>
 </head>
 <body>
@@ -38,7 +42,11 @@
 					<div class="card">
 						<div class="card-body">
 						              
-							<h2 class="mb-2" style="text-align:center">Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h2><br>
+							<h2 class="mb-2" style="text-align:center">
+								<p>Oracle DB를 이용한</p>
+								<p>회원 및 게시글 CRUD</p>
+								<p>Minimal Project</p>
+							</h2><br>
 							<h3 class="mb-2" style="text-align:center">Start Menu</h3>
 											
 							<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
@@ -66,7 +74,11 @@
 					<!-- 메인 -->
 					<div class="card">
 						<div class="card-body">
-							<h2 class="mb-2" style="text-align:center">Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h2><br>
+							<h2 class="mb-2" style="text-align:center"><h2 class="mb-2" style="text-align:center">
+								<p>Oracle DB를 이용한</p>
+								<p>회원 및 게시글 CRUD</p>
+								<p>Minimal Project</p>
+							</h2><br>
 							<h3 class="mb-2" style="text-align:center">Welcome! ${loginMember.memberId }</h3><br>
 							<h4 class="mb-2" style="text-align:center">Member Menu</h4>
 							<form id="formAuthentication" class="mb-3" action="index.html" method="POST">

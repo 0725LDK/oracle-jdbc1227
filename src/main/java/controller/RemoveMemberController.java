@@ -20,6 +20,11 @@ public class RemoveMemberController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//회원탈퇴 폼
 		// VIEW -> /WEB-INF/view/member/removerMember.jsp
+		
+		String msg = request.getParameter("msg");
+		
+		request.setAttribute("msg", msg);
+		
 		request.getRequestDispatcher("/WEB-INF/view/member/removeMember.jsp").forward(request, response);
 	}
 
@@ -41,10 +46,10 @@ public class RemoveMemberController extends HttpServlet {
 		if(row ==0)
 		{
 			System.out.println("removeMember 실패");
-			response.sendRedirect(request.getContextPath()+"/member/removeMember?memberId="+memberId);
+			response.sendRedirect(request.getContextPath()+"/member/removeMember?memberId="+memberId+"&msg="+0);
 			return;
 		}
-		response.sendRedirect(request.getContextPath()+"/member/logout");
+		response.sendRedirect(request.getContextPath()+"/member/logout?msg="+0);
 	}
 
 }

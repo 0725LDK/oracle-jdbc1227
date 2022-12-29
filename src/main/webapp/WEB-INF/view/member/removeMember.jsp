@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html
   lang="en"
@@ -12,6 +12,12 @@
 <head>
 	<!-- Link & script -->
 	<jsp:include page="/inc/HTMLHead.jsp"></jsp:include>
+
+<c:if test="${msg == 0 }">
+	<script>
+		alert('PW가 맞지 않습니다.');
+	</script>
+</c:if>
 
 <script>
 	$(document).ready(function() {
@@ -63,7 +69,8 @@
 								</div>
 							</div>
 							<div class="mb-3">
-								<button class="btn btn-primary d-grid w-100" id="removeMemberBtn" type="button">Delete My Account</button>
+								<button class="btn btn-primary d-grid w-100" id="removeMemberBtn" type="button">Delete My Account</button><br>
+								<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/home">Go Home</a>
 							</div>
 						</form>
 					</div>

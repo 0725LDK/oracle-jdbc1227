@@ -58,11 +58,11 @@
 				<table class="table table-hover">
 					<thead>
 						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>수정일자</th>
-							<th>생성일자</th>
+							<th style="font-size : 15px;">Number</th>
+							<th style="font-size : 15px;">Title</th>
+							<th style="font-size : 15px;">User</th>
+							<th style="font-size : 15px;">Update Date</th>
+							<th style="font-size : 15px;">Create Date</th>
 						</tr>
 					</thead>
 					<c:forEach var="b" items="${boardList}">
@@ -81,21 +81,21 @@
 							<td colspan="5" style="text-align:center">
 								<!-- 페이징 -->
 								<c:if test="${currentPage == firstPage}">
-									<span>처음으로</span>
-									<span>이전</span>
+									<span>&lt;&lt; &nbsp; &nbsp;</span>
+									<span>&lt; &nbsp; &nbsp;</span>
 								</c:if>
 								<c:if test="${currentPage != firstPage}">
-									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${firstPage}">처음으로</a>
-									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage-1}">이전</a>
+									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${firstPage}">&lt;&lt; &nbsp; &nbsp;</a>
+									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage-1}">&lt; &nbsp; &nbsp;</a>
 								</c:if>
 								<span>[ ${currentPage} ]</span>
 								<c:if test="${currentPage == lastPage}">
-									<span>다음</span>
-									<span>마지막으로</span>
+									<span> &nbsp; &nbsp;&gt;</span>
+									<span> &nbsp; &nbsp;&gt;&gt;</span>
 								</c:if>
 								<c:if test="${currentPage != lastPage}">
-									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage+1}">다음</a>
-									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${lastPage}">마지막으로</a>
+									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${currentPage+1}"> &nbsp; &nbsp;&gt;</a>
+									<a href="${pageContext.request.contextPath}/board/boardList?rowPerPage=${rowPerPage}&currentPage=${lastPage}"> &nbsp; &nbsp;&gt;&gt;</a>
 								</c:if>
 						
 								<span >
