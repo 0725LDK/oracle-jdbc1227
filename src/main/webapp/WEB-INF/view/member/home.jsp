@@ -42,7 +42,7 @@
 					<div class="card">
 						<div class="card-body">
 						              
-							<h2 class="mb-2" style="text-align:center">
+							<h2 class="mb-2" style="text-align:center; color:#3F0099;">
 								<p>Oracle DB를 이용한</p>
 								<p>회원 및 게시글 CRUD</p>
 								<p>Minimal Project</p>
@@ -74,7 +74,7 @@
 					<!-- 메인 -->
 					<div class="card">
 						<div class="card-body">
-							<h2 class="mb-2" style="text-align:center"><h2 class="mb-2" style="text-align:center">
+							<h2 class="mb-2" style="text-align:center; color:#3F0099;">
 								<p>Oracle DB를 이용한</p>
 								<p>회원 및 게시글 CRUD</p>
 								<p>Minimal Project</p>

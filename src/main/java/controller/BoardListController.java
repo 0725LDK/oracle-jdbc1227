@@ -58,6 +58,7 @@ public class BoardListController extends HttpServlet {
 			System.out.println(countBoard+"<---BoardListCtrl 검색어X 총 board 열 수");
 			System.out.println(lastPage+"<---BoardListCtrl 검색어X 마지막 페이지");
 		}
+		//검색어가 있을시
 		else if(search != null)
 		{
 			countBoard = BS.getCountBoard(search);
