@@ -2,47 +2,95 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="<%=request.getContextPath()%>/resource/assets/"
+  data-template="vertical-menu-template-free"
+>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function() {
-		
-		//회원탈퇴시 유효성 검사
-		$('#logout').click(function()
-				{
-						alert('로그아웃 되었습니다.');
-						return;
-				});
-	});
-</script>
+	<!-- Link & script -->
+	<jsp:include page="/inc/HTMLHead.jsp"></jsp:include>
+	
+	<script>
+		$(document).ready(function() {
+			
+			//로그아웃시 유효성 검사
+			$('#logout').click(function()
+					{
+							alert('로그아웃 되었습니다.');
+							return;
+					});
+		});
+	</script>
+	
+	<title>HOME</title>
 </head>
 <body>
+	<!--로그인 안했을때  -->
 	<c:if test="${loginMember == null}">
-		<h1>Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h1>
-		<h3>로그인 전 페이지</h3>
-		
-		<div>
-			<a href="${pageContext.request.contextPath}/member/login">로그인</a>
-			<a href="${pageContext.request.contextPath}/member/addMember">회원가입</a>
+		<div class="container-xxl">
+			<div class="authentication-wrapper authentication-basic container-p-y">
+				<div class="authentication-inner">
+					<!-- 메인 -->
+					<div class="card">
+						<div class="card-body">
+						              
+							<h2 class="mb-2" style="text-align:center">Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h2><br>
+							<h3 class="mb-2" style="text-align:center">Start Menu</h3>
+											
+							<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+							                
+								<div class="mb-3">
+									<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/member/login">Login</a>
+								</div>
+								<div class="mb-3">
+									<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/member/addMember">Create Account</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- /메인 -->
+				</div>
+			</div>
 		</div>
-		
-		
+	</c:if>
+
+	<!-- 로그인 했을때 화면 -->	
+	<c:if test="${loginMember != null}">
+			<div class="container-xxl">
+			<div class="authentication-wrapper authentication-basic container-p-y">
+				<div class="authentication-inner">
+					<!-- 메인 -->
+					<div class="card">
+						<div class="card-body">
+							<h2 class="mb-2" style="text-align:center">Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h2><br>
+							<h3 class="mb-2" style="text-align:center">Welcome! ${loginMember.memberId }</h3><br>
+							<h4 class="mb-2" style="text-align:center">Member Menu</h4>
+							<form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+							                
+								<div class="mb-3">
+									<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/board/boardList?memberId=${loginMember.memberId}">Board List</a>
+								</div>
+								<div class="mb-3">
+									<a class="btn btn-primary d-grid w-100" href="${pageContext.request.contextPath}/member/memberOne?memberId=${loginMember.memberId}">My Page</a>
+								</div>
+								<div class="mb-3">
+									<a class="btn btn-primary d-grid w-100" id="logout" href="${pageContext.request.contextPath}/member/logout">Logout</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- 메인 -->
+				</div>
+			</div>
+		</div>
 	</c:if>
 	
-	<c:if test="${loginMember != null}">
-		<h1>Oracle DB를 이용한 회원 및 게시글 CRUD 미니 프로젝트 </h1>
-		<h3>로그인 후 페이지</h3>
-		<div>
-			<span>${loginMember.memberId }님 반갑습니다.</span>
-		</div>
-		<div>
-			<a href="${pageContext.request.contextPath}/board/boardList?memberId=${loginMember.memberId}">게시판 리스트</a>
-			<a href="${pageContext.request.contextPath}/member/memberOne?memberId=${loginMember.memberId}">회원정보 보기</a>
-			<a id="logout" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-		</div>
-	</c:if>
+	<!-- Core JS -->
+	<!-- build:js assets/vendor/js/core.js -->
+	<jsp:include page="/inc/coreJS.jsp"></jsp:include>
 </body>
 </html>

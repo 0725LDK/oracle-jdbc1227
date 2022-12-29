@@ -38,7 +38,6 @@ public class RemoveMemberController extends HttpServlet {
 		int row = 1;
 		MemberService memberService = new MemberService();
 		row = memberService.removeMember(member);
-		
 		if(row ==0)
 		{
 			System.out.println("removeMember 실패");

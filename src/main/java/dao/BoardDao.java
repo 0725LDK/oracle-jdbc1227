@@ -44,9 +44,9 @@ public class BoardDao {
 	//겁색어 있을때
 	public ArrayList<Board> searchBoardListByPage(Connection conn, int beginRow, int endRow,  String search) throws Exception {
 		ArrayList<Board> list = new ArrayList<Board>();
-		String sql = "SELECT board_no boardNo, board_title boardTitle, member_id memberId, createdate"
-				+ " FROM (SELECT rownum rnum, board_no, board_title, member_id ,createdate" 
-				+ " 	FROM (SELECT board_no, board_title, member_id ,createdate "
+		String sql = "SELECT board_no boardNo, board_title boardTitle, member_id memberId, createdate, updatedate"
+				+ " FROM (SELECT rownum rnum, board_no, board_title, member_id ,createdate, updatedate" 
+				+ " 	FROM (SELECT board_no, board_title, member_id ,createdate, updatedate "
 				+ "			FROM board WHERE board_title like ? ORDER BY createdate DESC))"
 				+ " WHERE rnum BETWEEN ? AND ?"; // WHERE rnum >=? AND rnum <=?;
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -60,6 +60,7 @@ public class BoardDao {
 			b.setBoardTitle(rs.getString("boardTitle"));
 			b.setMemberId(rs.getString("memberId"));
 			b.setCreatedate(rs.getString("createdate"));
+			b.setUpdatedate(rs.getString("updatedate"));
 			list.add(b);
 		}
 		return list;
@@ -67,9 +68,9 @@ public class BoardDao {
 	// 검색어 없을때
 	public ArrayList<Board> selectBoardListByPage(Connection conn, int beginRow, int endRow) throws Exception {
 		ArrayList<Board> list = new ArrayList<Board>();
-		String sql = "SELECT board_no boardNo, board_title boardTitle, member_id memberId, createdate"
-				+ " FROM (SELECT rownum rnum, board_no, board_title, member_id ,createdate" 
-				+ " 	FROM (SELECT board_no, board_title, member_id ,createdate "
+		String sql = "SELECT board_no boardNo, board_title boardTitle, member_id memberId, createdate, updatedate"
+				+ " FROM (SELECT rownum rnum, board_no, board_title, member_id ,createdate, updatedate" 
+				+ " 	FROM (SELECT board_no, board_title, member_id ,createdate, updatedate "
 				+ "			FROM board ORDER BY createdate DESC))"
 				+ " WHERE rnum BETWEEN ? AND ?"; // WHERE rnum >=? AND rnum <=?;
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -82,6 +83,7 @@ public class BoardDao {
 			b.setBoardTitle(rs.getString("boardTitle"));
 			b.setMemberId(rs.getString("memberId"));
 			b.setCreatedate(rs.getString("createdate"));
+			b.setUpdatedate(rs.getString("updatedate"));
 			list.add(b);
 		}
 		return list;

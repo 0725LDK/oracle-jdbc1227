@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html>
+<html
+  lang="en"
+  class="light-style customizer-hide"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="<%=request.getContextPath()%>/resource/assets/"
+  data-template="vertical-menu-template-free"
+>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<!-- Link & script -->
+	<jsp:include page="/inc/HTMLHead.jsp"></jsp:include>
+
+<title>LOGIN</title>
 <script>
 	$(document).ready(function() {
 		
@@ -28,23 +36,50 @@
 				});
 	});
 </script>
-
 </head>
+
 <body>
-	<h1>로그인</h1>
-	<form id="loginForm" action="${pageContext.request.contextPath}/member/login" method="post">
-		<table>
-			<tr>
-				<td>ID : </td>
-				<td><input id="memberId" type="text" name="memberId"></td>
-			</tr>
-			<tr>
-				<td>PW : </td>
-				<td><input id="memberPw" type="password" name="memberPw"></td>
-			</tr>
-		</table>
-		<button id="loginFormBtn" type="button">로그인</button>
-	</form>
+	<div class="container-xxl">
+		<div class="authentication-wrapper authentication-basic container-p-y">
+			<div class="authentication-inner">
+				<!-- Register -->
+				<div class="card">
+					<div class="card-body">
+						<h4 class="mb-2">LOGIN</h4><br>
+						<form id="loginForm" action="${pageContext.request.contextPath}/member/login" method="post" class="mb-3" >
+							<div class="mb-3">
+								<label for="email" class="form-label">Email or Username</label>
+								<input
+									class="form-control"
+									placeholder="Enter your email or username"
+									id="memberId" type="text" name="memberId"
+								/>
+							</div>
+							<div class="mb-3 form-password-toggle">
+								<div class="d-flex justify-content-between">
+									<label class="form-label" for="password">Password</label>
+								</div>
+								<div class="input-group input-group-merge">
+									<input
+										class="form-control"
+										id="memberPw" type="password" name="memberPw"
+										placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+									/>
+								</div>
+							</div>
+							<div class="mb-3">
+								<button class="btn btn-primary d-grid w-100" id="loginFormBtn" type="button">Login</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- /Register -->
+			</div>
+		</div>
+	</div>
 	
+	<!-- Core JS -->
+	<!-- build:js assets/vendor/js/core.js -->
+	<jsp:include page="/inc/coreJS.jsp"></jsp:include>
 </body>
 </html>
