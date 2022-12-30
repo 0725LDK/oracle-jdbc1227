@@ -22,9 +22,11 @@ public class RemoveBoardController extends HttpServlet {
 		if(row != 1)
 		{
 			System.out.println("삭제실패");
+			response.sendRedirect(request.getContextPath()+"/board/boardOne");
+			return;
 		}
-		
 		response.sendRedirect(request.getContextPath()+"/board/boardList");
+		
 	}
 
 	

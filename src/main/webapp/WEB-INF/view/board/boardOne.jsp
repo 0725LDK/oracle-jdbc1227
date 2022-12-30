@@ -17,7 +17,16 @@
 		//게시글 삭제시 alert
 		$('#removeBoard').click(function()
 				{
-					alert('게시글 삭제 성공!');
+					if(confirm("정말로 삭제 하시겠습니까?") == true)
+					{
+						alert('게시글 삭제 성공!');
+						return;						
+					}
+					else
+					{
+						return false;	
+					}
+			
 				});
 	});
 </script>
