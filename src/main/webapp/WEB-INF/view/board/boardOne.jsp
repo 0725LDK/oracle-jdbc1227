@@ -5,7 +5,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="<%=request.getContextPath()%>/resource/assets/"
+  data-assets-path="${pageContext.request.contextPath}/resource/assets/"
   data-template="vertical-menu-template-free"
 >
 <head>

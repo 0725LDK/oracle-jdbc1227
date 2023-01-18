@@ -11,7 +11,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/resource/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="${pageContext.request.contextPath}/resource/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,19 +22,19 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/css/demo.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
     <!-- Page -->
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resource/assets/vendor/css/pages/page-auth.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resource/assets/vendor/css/pages/page-auth.css" />
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 

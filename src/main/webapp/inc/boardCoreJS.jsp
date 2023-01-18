@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 	<!-- build:js assets/vendor/js/core.js -->
-    <script src="<%=request.getContextPath()%>/resource/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="<%=request.getContextPath()%>/resource/assets/vendor/libs/popper/popper.js"></script>
-    <script src="<%=request.getContextPath()%>/resource/assets/vendor/js/bootstrap.js"></script>
-    <script src="<%=request.getContextPath()%>/resource/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/vendor/libs/popper/popper.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/vendor/js/bootstrap.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="<%=request.getContextPath()%>/resource/assets/vendor/js/menu.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="<%=request.getContextPath()%>/resource/assets/js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/resource/assets/js/main.js"></script>
 
     <!-- Page JS -->
 
